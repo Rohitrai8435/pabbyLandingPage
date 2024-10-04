@@ -29,11 +29,8 @@ export function HomeView() {
         progress={pageProgress.scrollYProgress}
         sx={{ position: 'fixed' }}
       />
-
       <BackToTop />
-
       <HomeHero />
-
       <Stack sx={{ position: 'relative', bgcolor: 'background.default' }}>
         <HomeHugePackElements />
         <HomeForDesigner />

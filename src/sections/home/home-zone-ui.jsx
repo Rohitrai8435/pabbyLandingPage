@@ -42,6 +42,8 @@ export function HomeZoneUI({ sx, ...other }) {
           filter: (theme) =>
             `drop-shadow(0 24px 48px ${varAlpha(theme.vars.palette.common.blackChannel, 0.16)})`,
         },
+
+        
       }}
     >
       <Box
@@ -53,6 +55,7 @@ export function HomeZoneUI({ sx, ...other }) {
           aspectRatio: '0',
           borderRadius: '16px 16px 16px 16px',
           border: (theme) => `solid 3px ${theme.vars.palette.common.white}`,
+          boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)',
         }}
       />
     </Stack>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Icon } from '@iconify/react';
 
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
@@ -8,8 +9,6 @@ import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import Container from '@mui/material/Container';
 import { useTheme } from '@mui/material/styles';
-import DoneIcon from '@mui/icons-material/Done';
-import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import SecurityIcon from '@mui/icons-material/Security';
 import { Card, Tooltip, CardContent } from '@mui/material';
@@ -23,9 +22,9 @@ import { SectionTitle } from './components/section-title';
 
 // Pricing logic
 const pricingData = {
-  Monthly: { price: 3259, oldPrice: 4929 },
+  Monthly: { price: 4929, oldPrice: 4929 },
   Yearly: { price: 3259, oldPrice: 4929 },
-  '2 Yearly': { price: 3259, oldPrice: 4929 },
+  '2 Yearly': { price: 3000, oldPrice: 4929 },
   '3 Yearly': { price: 3059, oldPrice: 4929 }, // Updated price
 };
 
@@ -128,7 +127,15 @@ export function HomePricing({ sx, ...other }) {
             >
               <Tab
                 label={
-                  <Tooltip title="Pay monthly for flexibility" arrow placement="top">
+                  <Tooltip
+                    title={
+                      <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                        Pay monthly for flexibility
+                      </Typography>
+                    }
+                    arrow
+                    placement="top"
+                  >
                     <span>Monthly</span>
                   </Tooltip>
                 }
@@ -137,7 +144,15 @@ export function HomePricing({ sx, ...other }) {
 
               <Tab
                 label={
-                  <Tooltip title="You will get 33% discount on pricing." arrow placement="top">
+                  <Tooltip
+                    title={
+                      <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                        You will get 33% discount on pricing.
+                      </Typography>
+                    }
+                    arrow
+                    placement="top"
+                  >
                     <span>
                       Yearly -{' '}
                       <span style={{ color: `${theme.palette.primary.main}` }}>SAVE 33%</span>
@@ -146,9 +161,18 @@ export function HomePricing({ sx, ...other }) {
                 }
                 value="Yearly"
               />
+
               <Tab
                 label={
-                  <Tooltip title="You will get 33% discount on pricing." arrow placement="top">
+                  <Tooltip
+                    title={
+                      <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                        You will get 33% discount on pricing.
+                      </Typography>
+                    }
+                    arrow
+                    placement="top"
+                  >
                     <span>
                       2 Yearly -{' '}
                       <span style={{ color: `${theme.palette.primary.main}` }}>SAVE 33%</span>
@@ -157,11 +181,20 @@ export function HomePricing({ sx, ...other }) {
                 }
                 value="2 Yearly"
               />
+
               <Tab
                 label={
-                  <Tooltip title="You will get 40% discount on pricing." arrow placement="top">
+                  <Tooltip
+                    title={
+                      <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                        You will get 40% discount on pricing.
+                      </Typography>
+                    }
+                    arrow
+                    placement="top"
+                  >
                     <span>
-                      3 Yearly -
+                      3 Yearly -{' '}
                       <span style={{ color: `${theme.palette.primary.main}` }}>SAVE 40%</span>
                     </span>
                   </Tooltip>
@@ -170,6 +203,7 @@ export function HomePricing({ sx, ...other }) {
               />
             </Tabs>
           </Box>
+
           {/* Pricing Plans */}
           <Box
             sx={{
@@ -185,6 +219,7 @@ export function HomePricing({ sx, ...other }) {
               plan={{
                 license: 'FREE',
                 price: 0,
+                oldPrice: 3000,
                 commonFeature: ['Access All Pabbly Apps', 'Unlimited Features'],
                 features: [
                   {
@@ -283,7 +318,7 @@ export function HomePricing({ sx, ...other }) {
 }
 
 // PlanCard Component with Tooltip functionality
-function PlanCard({ plan, plus = false, free = false, sx, ...other }) {
+const PlanCard = ({ plan, plus = false, free = false, sx, ...other }) => {
   const theme = useTheme();
 
   return (
@@ -343,36 +378,57 @@ function PlanCard({ plan, plus = false, free = false, sx, ...other }) {
         </Box>
       )}
       {free && (
-        <Typography variant="h3" sx={{ color: 'inherit' }}>
-          Free
-        </Typography>
+        <Box>
+          <Typography variant="body2" sx={{ textDecoration: 'line-through' }}>
+            normally ₹{plan.oldPrice}/mo
+          </Typography>
+          <Typography variant="h3" sx={{ color: 'inherit' }}>
+            ₹{plan.price}/mo
+          </Typography>
+        </Box>
       )}
+
       {/* Common Features */}
       <Divider sx={{ borderWidth: '1px', mb: 1 }} />
-      <Stack spacing={0.5} sx={{ typography: 'body2', mb: 2 }}>
+      <Box spacing={0.5} sx={{ typography: 'body2', mb: 2 ,ml:"3px" ,textAlign:"center"}}>
         {plan.commonFeature.map((feature, index) => (
-          <Typography variant="body2" key={index} sx={{ textAlign: 'center' }}>
-            <Box
-              component="span"
-              sx={{
-                color: free ? 'error.main' : 'success.main', // Red for CloseIcon, Green for CheckIcon
-                fontWeight: 'bold',
-                mr: 1, // Margin between the icon and text
-                display: 'inline-flex', // Ensures proper alignment
-                verticalAlign: 'middle',
-              }}
-            >
-              {free ? <CloseIcon fontSize="small" /> : <DoneIcon fontSize="small" />}
+          
+            <Box display="flex" alignItems="center">
+              {free ? (
+                <Icon
+                  icon="ep:close-bold"
+                  width="15px"
+                  height="15px"
+                  style={{ color: '#FF5F1E', marginRight: 22 }}
+                />
+              ) : (
+                <Icon
+                  icon="fa-solid:check"
+                  width="15px"
+                  height="15px"
+                  style={{ color: '#20B276', marginRight:22}}
+                />
+              )}
+               <Typography variant="body2" key={index} sx={{ textAlign: 'start' }}>
+              {feature}
+            </Typography>
             </Box>
-            {feature}
-          </Typography>
         ))}
-      </Stack>
+      </Box>
 
       {/* Features with Tooltip */}
       <Stack spacing={2} sx={{ typography: 'body2' }}>
         {plan.features.map((feature, index) => (
-          <Tooltip title={feature.tooltip} key={index} arrow placement="top">
+          <Tooltip
+            title={
+              <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                {feature.tooltip}
+              </Typography>
+            }
+            key={index}
+            arrow
+            placement="top"
+          >
             <Box sx={{ display: 'flex', alignItems: 'start', gap: 2 }}>
               <Box
                 component="img"
@@ -410,7 +466,8 @@ function PlanCard({ plan, plus = false, free = false, sx, ...other }) {
       </Button>
     </Stack>
   );
-}
+};
+
 // GuaranteeCard Component
 function GuaranteeCard() {
   return (
@@ -527,14 +584,22 @@ function EnterpriseReady() {
         <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           {/* Header Section */}
           <Box display="flex" alignItems="center" mb={3} sx={{ textAlign: 'center' }}>
-            <SecurityIcon
-              sx={{ fontSize: { xs: '25px', sm: '40px', md: '50px' }, color: '#0062cc', mr: 2 }}
+            <Box
+              component="img"
+              alt="guarantee image"
+              src="/assets/images/home/Security_Shield-1.svg"
+              sx={{
+                width: { xs: '25px', sm: '50px', md: '50px' },
+                height: { xs: '25px', sm: '50px', md: '50px' },
+                objectFit: 'contain',
+                mr:1
+              }}
             />
             <Typography
-              variant="h4"
+              variant="h5"
               fontWeight="bold"
               color="inherit"
-              sx={{ fontSize: { xs: '20px', sm: '40px' } }}
+              sx={{ fontSize: { xs: '20px', sm: '40px' },fontWeight:"1000" }}
             >
               Pabbly is <span style={{ color: '#0062cc' }}>Enterprise Ready!</span>
             </Typography>
@@ -550,8 +615,8 @@ function EnterpriseReady() {
           <Box
             sx={{
               display: 'flex',
-              alignItems: "center",
-              justifyContent:"left",
+              alignItems: 'center',
+              justifyContent: 'left',
               mb: 4,
               flexWrap: { xs: 'wrap', md: 'nowrap', lg: 'nowrap' },
               gap: '10px',
@@ -583,7 +648,6 @@ function EnterpriseReady() {
                 width: { xs: '80px', sm: '100px', md: '114px' },
                 height: { xs: '80px', sm: '100px', md: '114px' },
                 objectFit: 'contain',
-                
               }}
             />
           </Box>
@@ -625,7 +689,6 @@ function EnterpriseReady() {
                 width: { xs: '80px', sm: '100px', md: '114px' },
                 height: { xs: '80px', sm: '100px', md: '114px' },
                 objectFit: 'contain',
-                
               }}
             />
           </Box>

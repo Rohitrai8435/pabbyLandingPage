@@ -31,7 +31,12 @@ export function HomeFooter({ sx, ...other }) {
               Company
             </Typography>
             <Box sx={{ mb: 1 }}>
-              <Tooltip title="Learn more about us" arrow placement="top">
+              <Tooltip
+                title="Learn more about us"
+                arrow
+                placement="top"
+                sx={{ textAlign: 'center' }}
+              >
                 <Typography
                   variant="body2"
                   component="span"
@@ -45,7 +50,12 @@ export function HomeFooter({ sx, ...other }) {
               </Tooltip>
             </Box>
             <Box sx={{ mb: 1 }}>
-              <Tooltip title="Read our privacy policy" arrow placement="top">
+              <Tooltip
+                title="Read our privacy policy"
+                arrow
+                placement="top"
+                sx={{ textAlign: 'center' }}
+              >
                 <Typography
                   variant="body2"
                   component="span"
@@ -59,7 +69,12 @@ export function HomeFooter({ sx, ...other }) {
               </Tooltip>
             </Box>
             <Box sx={{ mb: 1 }}>
-              <Tooltip title="Terms and conditions" arrow placement="top">
+              <Tooltip
+                title="Terms and conditions"
+                arrow
+                placement="top"
+                sx={{ textAlign: 'center' }}
+              >
                 <Typography
                   variant="body2"
                   component="span"
@@ -73,7 +88,12 @@ export function HomeFooter({ sx, ...other }) {
               </Tooltip>
             </Box>
             <Box sx={{ mb: 1 }}>
-              <Tooltip title="Careers opportunities" arrow placement="top">
+              <Tooltip
+                title="Careers opportunities"
+                arrow
+                placement="top"
+                sx={{ textAlign: 'center' }}
+              >
                 <Typography
                   variant="body2"
                   component="span"
@@ -87,7 +107,12 @@ export function HomeFooter({ sx, ...other }) {
               </Tooltip>
             </Box>
             <Box sx={{ mb: 1 }}>
-              <Tooltip title="Learn about our security practices" arrow placement="top">
+              <Tooltip
+                title="Learn about our security practices"
+                arrow
+                placement="top"
+                sx={{ textAlign: 'center' }}
+              >
                 <Typography
                   variant="body2"
                   component="span"
@@ -101,7 +126,12 @@ export function HomeFooter({ sx, ...other }) {
               </Tooltip>
             </Box>
             <Box sx={{ mb: 1 }}>
-              <Tooltip title="View our brand assets" arrow placement="top">
+              <Tooltip
+                title="View our brand assets"
+                arrow
+                placement="top"
+                sx={{ textAlign: 'center' }}
+              >
                 <Typography
                   variant="body2"
                   component="span"
@@ -124,7 +154,11 @@ export function HomeFooter({ sx, ...other }) {
 
             <Box sx={{ mb: 1 }}>
               <Tooltip
-                title="Access 6.6K+ video tutorials to learn how Pabbly Connect works."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Access 6.6K+ video tutorials to learn how Pabbly Connect works.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -140,9 +174,14 @@ export function HomeFooter({ sx, ...other }) {
                 </Typography>
               </Tooltip>
             </Box>
+
             <Box sx={{ mb: 1 }}>
               <Tooltip
-                title="Join Pabbly Connect Facebook community with over 17.1K+ members."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Join Pabbly Connect Facebook community with over 17.1K+ members.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -158,9 +197,14 @@ export function HomeFooter({ sx, ...other }) {
                 </Typography>
               </Tooltip>
             </Box>
+
             <Box sx={{ mb: 1 }}>
               <Tooltip
-                title="Join Pabbly Subscription Billing Facebook community with over 2.4K+ members."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Join Pabbly Subscription Billing Facebook community with over 2.4K+ members.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -177,12 +221,18 @@ export function HomeFooter({ sx, ...other }) {
                 </Typography>
               </Tooltip>
             </Box>
+
             <Typography variant="h6" gutterBottom>
               Partners
             </Typography>
+
             <Box sx={{ mb: 1 }}>
               <Tooltip
-                title="Join the Pabbly affiliate program and start earning a 30% commission."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Join the Pabbly affiliate program and start earning a 30% commission.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -208,7 +258,11 @@ export function HomeFooter({ sx, ...other }) {
 
             <Box sx={{ mb: 1 }}>
               <Tooltip
-                title="With Pabbly Plus you can access all Pabbly applications for a single price."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    With Pabbly Plus you can access all Pabbly applications for a single price.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -224,9 +278,15 @@ export function HomeFooter({ sx, ...other }) {
                 </Typography>
               </Tooltip>
             </Box>
+
             <Box sx={{ mb: 1 }}>
               <Tooltip
-                title="Pabbly Connect application allows you to seamlessly integrate various applications for business automation."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Pabbly Connect application allows you to seamlessly integrate various
+                    applications for business automation.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -242,9 +302,14 @@ export function HomeFooter({ sx, ...other }) {
                 </Typography>
               </Tooltip>
             </Box>
+
             <Box sx={{ mb: 1 }}>
               <Tooltip
-                title="Pabbly Subscription Billing allows you to easily manage subscription plans"
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Pabbly Subscription Billing allows you to easily manage subscription plans.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -260,9 +325,15 @@ export function HomeFooter({ sx, ...other }) {
                 </Typography>
               </Tooltip>
             </Box>
+
             <Box sx={{ mb: 1 }}>
               <Tooltip
-                title="Pabbly Email Marketing application allows you to send unlimited bulk emails to your subscribers."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Pabbly Email Marketing application allows you to send unlimited bulk emails to
+                    your subscribers.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -278,9 +349,15 @@ export function HomeFooter({ sx, ...other }) {
                 </Typography>
               </Tooltip>
             </Box>
+
             <Box sx={{ mb: 1 }}>
               <Tooltip
-                title="Pabbly Form Builder application enables you to create any kind of online form for your business."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Pabbly Form Builder application enables you to create any kind of online form
+                    for your business.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -296,9 +373,15 @@ export function HomeFooter({ sx, ...other }) {
                 </Typography>
               </Tooltip>
             </Box>
+
             <Box sx={{ mb: 1 }}>
               <Tooltip
-                title="Pabbly Email Verification application allows you to check whether an email address is valid or invalid."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Pabbly Email Verification application allows you to check whether an email
+                    address is valid or invalid.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -321,9 +404,18 @@ export function HomeFooter({ sx, ...other }) {
             <Typography variant="h6" gutterBottom>
               Contact
             </Typography>
+
             <Box sx={{ mb: 1, display: 'flex', alignItems: 'center', gap: '8px' }}>
               <MailOutlineIcon fontSize="small" />
-              <Tooltip title="Contact us for pre-sales inquiries." arrow placement="top">
+              <Tooltip
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Contact us for pre-sales inquiries.
+                  </Typography>
+                }
+                arrow
+                placement="top"
+              >
                 <Typography
                   variant="body2"
                   component="span"
@@ -339,7 +431,15 @@ export function HomeFooter({ sx, ...other }) {
 
             <Box sx={{ mb: 1, display: 'flex', alignItems: 'center', gap: '8px' }}>
               <HeadsetMicOutlineIcon fontSize="small" />
-              <Tooltip title="Contact us for technical assistance." arrow placement="top">
+              <Tooltip
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Contact us for technical assistance.
+                  </Typography>
+                }
+                arrow
+                placement="top"
+              >
                 <Typography
                   variant="body2"
                   component="span"
@@ -355,7 +455,15 @@ export function HomeFooter({ sx, ...other }) {
 
             <Box sx={{ mb: 1, display: 'flex', alignItems: 'center', gap: '8px' }}>
               <PhoneOutlineIcon fontSize="small" />
-              <Tooltip title="Get in touch with the Pabbly team." arrow placement="top">
+              <Tooltip
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Get in touch with the Pabbly team.
+                  </Typography>
+                }
+                arrow
+                placement="top"
+              >
                 <Typography
                   variant="body2"
                   component="span"
@@ -372,7 +480,11 @@ export function HomeFooter({ sx, ...other }) {
             <Box sx={{ mb: 1, display: 'flex', alignItems: 'center', gap: '8px' }}>
               <ForumOutlined fontSize="small" />
               <Tooltip
-                title="Visit our support forum for help and discussions."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Visit our support forum for help and discussions.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -392,7 +504,11 @@ export function HomeFooter({ sx, ...other }) {
             <Box sx={{ mb: 1, display: 'flex', alignItems: 'center', gap: '8px' }}>
               <BusinessOutlined fontSize="small" />
               <Tooltip
-                title="Reach out to the sales team for enterprise plans."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Reach out to the sales team for enterprise plans.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -415,50 +531,93 @@ export function HomeFooter({ sx, ...other }) {
                 Follow Us
               </Typography>
               <Box sx={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-                <Facebook
-                  style={{
-                    transition: 'transform 0.2s ease-in-out, color 0.2s ease-in-out', // Smooth transition for scale and color
-                  }}
-                  onMouseOver={(e) => {
-                    e.target.style.transform = 'scale(1.1)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.transform = 'scale(1)';
-                  }}
-                />
-                <YouTube
-                  style={{
-                    transition: 'transform 0.2s ease-in-out, color 0.2s ease-in-out',
-                  }}
-                  onMouseOver={(e) => {
-                    e.target.style.transform = 'scale(1.1)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.transform = 'scale(1)';
-                  }}
-                />
-                <Instagram
-                  style={{
-                    transition: 'transform 0.2s ease-in-out, color 0.2s ease-in-out',
-                  }}
-                  onMouseOver={(e) => {
-                    e.target.style.transform = 'scale(1.1)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.transform = 'scale(1)';
-                  }}
-                />
-                <Twitter
-                  style={{
-                    transition: 'transform 0.2s ease-in-out, color 0.2s ease-in-out',
-                  }}
-                  onMouseOver={(e) => {
-                    e.target.style.transform = 'scale(1.1)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.transform = 'scale(1)';
-                  }}
-                />
+                <Tooltip
+                  title={
+                    <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                      Follow us on Facebook
+                    </Typography>
+                  }
+                  arrow
+                  placement="top"
+                >
+                  <Facebook
+                    style={{
+                      transition: 'transform 0.2s ease-in-out, color 0.2s ease-in-out',
+                    }}
+                    onMouseOver={(e) => {
+                      e.target.style.transform = 'scale(1.1)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = 'scale(1)';
+                    }}
+                  />
+                </Tooltip>
+
+                <Tooltip
+                  title={
+                    <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                      Subscribe to our YouTube channel
+                    </Typography>
+                  }
+                  arrow
+                  placement="top"
+                >
+                  <YouTube
+                    style={{
+                      transition: 'transform 0.2s ease-in-out, color 0.2s ease-in-out',
+                    }}
+                    onMouseOver={(e) => {
+                      e.target.style.transform = 'scale(1.1)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = 'scale(1)';
+                    }}
+                  />
+                </Tooltip>
+
+                <Tooltip
+                  title={
+                    <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                      Follow us on Instagram
+                    </Typography>
+                  }
+                  arrow
+                  placement="top"
+                >
+                  <Instagram
+                    style={{
+                      transition: 'transform 0.2s ease-in-out, color 0.2s ease-in-out',
+                    }}
+                    onMouseOver={(e) => {
+                      e.target.style.transform = 'scale(1.1)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = 'scale(1)';
+                    }}
+                  />
+                </Tooltip>
+
+                <Tooltip
+                  title={
+                    <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                      Follow us on Twitter
+                    </Typography>
+                  }
+                  arrow
+                  placement="top"
+                >
+                  <Twitter
+                    style={{
+                      transition: 'transform 0.2s ease-in-out, color 0.2s ease-in-out',
+                    }}
+                    onMouseOver={(e) => {
+                      e.target.style.transform = 'scale(1.1)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = 'scale(1)';
+                    }}
+                  />
+                </Tooltip>
               </Box>
             </Box>
           </Grid>
@@ -473,7 +632,12 @@ export function HomeFooter({ sx, ...other }) {
 
             <Box sx={{ mb: 1 }}>
               <Tooltip
-                title="Pabbly Subscription Billing API documentation allows developers to generate invoices and manage subscriptions."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Pabbly Subscription Billing API documentation allows developers to generate
+                    invoices and manage subscriptions.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -489,9 +653,15 @@ export function HomeFooter({ sx, ...other }) {
                 </Typography>
               </Tooltip>
             </Box>
+
             <Box sx={{ mb: 1 }}>
               <Tooltip
-                title="Pabbly Email Marketing API documentation enables developers to create and send emails."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Pabbly Email Marketing API documentation enables developers to create and send
+                    emails.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -516,7 +686,11 @@ export function HomeFooter({ sx, ...other }) {
 
             <Box sx={{ mb: 1 }}>
               <Tooltip
-                title="Explore over 2000+ app integrations available through Pabbly Connect."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Explore over 2000+ app integrations available through Pabbly Connect.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -532,9 +706,14 @@ export function HomeFooter({ sx, ...other }) {
                 </Typography>
               </Tooltip>
             </Box>
+
             <Box sx={{ mb: 1 }}>
               <Tooltip
-                title="Integrate your app with the Pabbly Connect Developer platform."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Integrate your app with the Pabbly Connect Developer platform.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -569,7 +748,15 @@ export function HomeFooter({ sx, ...other }) {
               },
             ].map((item) => (
               <Box sx={{ mb: 1, display: 'flex', alignItems: 'center' }} key={item.label}>
-                <Tooltip title={item.tooltip} arrow placement="top">
+                <Tooltip
+                  title={
+                    <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                      {item.tooltip}
+                    </Typography>
+                  }
+                  arrow
+                  placement="top"
+                >
                   <Typography
                     variant="body2"
                     component="span"
@@ -600,7 +787,11 @@ export function HomeFooter({ sx, ...other }) {
               }}
             >
               <Tooltip
-                title="Pabbly is SOC2 Type 2 and ISO 27001:2022 certified."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Pabbly is SOC2 Type 2 and ISO 27001:2022 certified.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >
@@ -616,8 +807,13 @@ export function HomeFooter({ sx, ...other }) {
                   }}
                 />
               </Tooltip>
+
               <Tooltip
-                title="Pabbly is SOC2 Type 2 and ISO 27001:2022 certified."
+                title={
+                  <Typography variant="caption" sx={{ textAlign: 'center', display: 'block' }}>
+                    Pabbly is SOC2 Type 2 and ISO 27001:2022 certified.
+                  </Typography>
+                }
                 arrow
                 placement="top"
               >

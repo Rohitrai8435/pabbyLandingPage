@@ -1,22 +1,22 @@
-// import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 
 import { HomeView } from 'src/sections/home/view';
 
 // ----------------------------------------------------------------------
 
-// const metadata = {
-//   title: 'Minimals UI: The starting point for your next project',
-//   description:
-//     'The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI ©, ready to be customized to your style',
-// };
+const metadata = {
+  title: 'Pabbly- Online Marketing and Sales Software',
+  description:
+    'Pabbly is a business platform offering tools for automation, email marketing, subscription billing, and form building, simplifying workflows and app integration.',
+};
 
 export default function Page() {
   return (
     <>
-      {/* <Helmet>
+      <Helmet>
         <title> {metadata.title}</title>
         <meta name="description" content={metadata.description} />
-      </Helmet> */}
+      </Helmet>
 
       <HomeView />
     </>

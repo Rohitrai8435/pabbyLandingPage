@@ -29,12 +29,11 @@ export function CarouselAutoScroll({ data }) {
 function CarouselItem({ item, index }) {
   return (
     <Box sx={{ position: 'relative' }}>
-    
       <Image
         visibleByDefault
         alt={item.title}
         src={item.coverUrl}
-        ratio={{ xs: '4/3', sm: '16/10' }}
+        ratio={{ xs: '18/10', sm: '16/10' }}
       />
     </Box>
   );

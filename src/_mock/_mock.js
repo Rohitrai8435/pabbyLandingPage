@@ -78,6 +78,9 @@ export const _mock = {
   image: {
     cover: (index) => `${basePath}/assets/images/cover/company-${index + 1}.webp`,
     avatar: (index) => `${basePath}/assets/images/avatar/avator-${index + 1}.webp`,
+    trust: (index) => `${basePath}/assets/images/trust/trust-${index + 1}.webp`,
+    support: (index) => `${basePath}/assets/images/support/support-${index + 1}.webp`,
+    play: (index) => `${basePath}/assets/images/play/play-${index + 1}.webp`,
     travel: (index) => `${assetURL}/assets/images/travel/travel-${index + 1}.webp`,
     course: (index) => `${basePath}/assets/images/course/vedio-${index + 1}.webp`,
     company: (index) => `${assetURL}/assets/images/company/company-${index + 1}.webp`,

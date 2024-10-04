@@ -142,7 +142,7 @@ export function CarouselArrowFloatButtons({
   const baseStyles = {
     zIndex: 9,
     top: '40%',
-    borderRadius: 1.5,
+    borderRadius: 3,
     position: 'absolute',
     color: 'common.white',
     bgcolor: 'text.primary',

@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import CardContent from '@mui/material/CardContent';
+// import CardContent from '@mui/material/CardContent';
 import { Grid, Stack, Container } from '@mui/material';
 
 import { maxLine } from 'src/theme/styles';
@@ -66,9 +66,8 @@ function BasicCard({ title, description, image }) {
   const theme = useTheme();
 
   return (
-    <Box
+    <Container
       sx={{
-        mx: 'auto',
         transition: 'transform 0.3s ease, box-shadow 0.3s ease', // Smooth transition for transform and shadow
         '&:hover': {
           boxShadow: theme.shadows[6], // Adds shadow on hover
@@ -77,34 +76,38 @@ function BasicCard({ title, description, image }) {
         overflow: 'hidden',
       }}
     >
-      <CardContent
+      <Box
         sx={{
           display: 'flex',
-          alignItems: 'start',
-          gap: '10px',
-          
-          p: 3,
+          padding:"20px"
           
         }}
       >
         <Box
-          component="img"
-          alt={title}
-          src={`${CONFIG.site.basePath}/assets/images/home/${image}`}
-          sx={{ width: 40, height: 40, display: 'flex', alignItems: 'start' }}
-        />
-        <Box>
-          <Typography variant="h5" component="div" sx={{ mt: 0, mb: 3 }}>
-            {title}
-          </Typography>
-          <Typography
-            sx={{ ...maxLine({ line: 3, persistent: theme.typography.body1 }), mt: 0, mb: 3 }}
-          >
-            {description}
-          </Typography>
+          sx={{
+            display: 'flex',
+            alignItems: 'start',
+          }}
+        >
+          <Box
+            component="img"
+            alt={title}
+            src={`${CONFIG.site.basePath}/assets/images/home/${image}`}
+            sx={{ width: 40, height: 40, mt: '5px', mr: '20px' }}
+          />
+          <Box>
+            <Typography variant="h5" sx={{ mt: 0, mb: 2 }}>
+              {title}
+            </Typography>
+            <Typography
+              sx={{ ...maxLine({ line: 3, persistent: theme.typography.body1 }), mt: 0, mb: 2 }}
+            >
+              {description}
+            </Typography>
+          </Box>
         </Box>
-      </CardContent>
-    </Box>
+      </Box>
+    </Container>
   );
 }
 

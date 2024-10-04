@@ -19,12 +19,31 @@ export const LogoFull = forwardRef(
     const gradientId = useId();
 
     // Using useMediaQuery to detect screen size and adjust logo size dynamically
-    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-    const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
+    const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down('xs'));
+    const isSmallScreen = useMediaQuery(theme.breakpoints.between('xs', 'sm'));
+    const isMediumScreen = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+    const isLargeScreen = useMediaQuery(theme.breakpoints.up('lg'));
 
     // Set dynamic width and height based on screen size
-    const logoWidth = isSmallScreen ? 80 : isMediumScreen ? 120 : 150; // Small, Medium, and Large sizes
-    const logoHeight = isSmallScreen ? 50 : isMediumScreen ? 50 : 100; // Corresponding heights
+    const logoWidth = isExtraSmallScreen
+      ? 60
+      : isSmallScreen
+        ? 80
+        : isMediumScreen
+          ? 100
+          : isLargeScreen
+            ? 150
+            : 120; // Default case for other screens
+
+    const logoHeight = isExtraSmallScreen
+      ? 40
+      : isSmallScreen
+        ? 20
+        : isMediumScreen
+          ? 20
+          : isLargeScreen
+            ? 100
+            : 70; // Corresponding heights for various screens
 
     const PRIMARY_LIGHT = theme.vars.palette.primary.light;
     const PRIMARY_MAIN = theme.vars.palette.primary.main;

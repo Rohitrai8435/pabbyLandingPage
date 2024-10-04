@@ -39,8 +39,7 @@ export function HomeMinimal({ sx, ...other }) {
       sx={{
         objectFit: 'contain',
         aspectRatio: '0',
-        borderRadius: '16px 16px 16px 16px',
-        border: (theme) => `solid 2px ${theme.vars.palette.common.white}`,
+        
       }}
     />
   );

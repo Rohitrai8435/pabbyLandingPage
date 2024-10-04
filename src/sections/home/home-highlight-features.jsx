@@ -39,8 +39,6 @@ export function HomeHighlightFeatures({ sx, ...other }) {
     >
       <Container>
         <MotionViewport>{renderDescription}</MotionViewport>
-
-        
         <CarouselDotsNumber data={SLIDES.slice(0, 6)} />
       </Container>
     </Stack>

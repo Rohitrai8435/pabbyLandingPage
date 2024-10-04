@@ -1,8 +1,12 @@
 import { lazy, Suspense } from 'react';
 import { Navigate, useRoutes } from 'react-router-dom';
 
-import { MainLayout } from 'src/layouts/main';
+import { Box,Button, Typography  } from '@mui/material';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
+import { MainLayout } from 'src/layouts/main';
+// import { useTheme } from '@mui/material/styles';
+// import { Iconify } from 'src/components/iconify';
 import { SplashScreen } from 'src/components/loading-screen';
 
 import { authRoutes } from './auth';
@@ -14,14 +18,96 @@ import { componentsRoutes } from './components';
 // ----------------------------------------------------------------------
 
 const HomePage = lazy(() => import('src/pages/home'));
+const PromoBanner = () => (
+  <Box
+    sx={{
+      backgroundColor: '#d1e6df',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexDirection: {
+        xs: 'column', // Stack items on small screens
+        sm: 'row', // Horizontal layout on small screens and above
+      },
+      textAlign: {
+        xs: 'center', // Center text on small screens
+        sm: 'left', // Left-align text on medium screens and above
+      },
+      padding: {
+        xs: '20px 10px', // Increase padding for small screens
+        sm: '10px 20px', // Regular padding for medium screens and above
+      },
+      borderRadius: '5px',
+    }}
+  >
+    {/* Left section */}
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: {
+          xs: 'column', // Stack icon and text on small screens
+          sm: 'row', // Horizontal layout on medium screens and above
+        },
+        marginBottom: { xs: '10px', sm: '0' }, // Space below on small screens
+      }}
+    >
+      <Box sx={{display:{xs:"none"}}}>
+        <AccessTimeIcon
+          sx={{
+            fontSize: { xs: '25px', md: '30px', sm: '25px' },
+            marginRight: { xs: '0', sm: '10px' }, // Remove margin for small screens
+            marginBottom: { xs: '10px', sm: '0' }, // Space below icon on small screens
+          }}
+        />
+        <Typography
+          variant="h6"
+          component="span"
+          sx={{
+            fontWeight: 'bold',
+            marginRight: { xs: '0', sm: '10px' }, // Adjust margin based on screen size
+          }}
+        >
+          LIMITED OFFER
+        </Typography>
+      </Box>
+      <Typography variant="body1" component="span">
+        👉 DON’T MISS OUT - Get Extra 5% Discount on Pabbly Plus (Yearly Plan)! Code:
+        <span style={{ fontWeight: '900', textDecoration: 'underline' }}> EXTRA5</span>
+      </Typography>
+    </Box>
+
+    {/* Right section */}
+    <Button
+      variant="contained"
+      sx={{
+        backgroundColor: '#fbc02d',
+        color: 'black',
+        fontWeight: 'bold',
+        '&:hover': {
+          backgroundColor: '#f5a623', // Slightly darker on hover
+        },
+        marginLeft: { xs: '0', sm: '20px' }, // No margin for small screens, add margin for larger screens
+        marginTop: { xs: '10px', sm: '0' }, // Add top margin for small screens
+        width: { xs: '100%', sm: 'auto' }, // Full width button on small screens
+      }}
+    >
+      VIEW OFFER
+    </Button>
+  </Box>
+);
+
+
 
 export function Router() {
+  
   return useRoutes([
     {
       path: '/',
       
       element: (
         <Suspense fallback={<SplashScreen />}>
+          <PromoBanner/>
           <MainLayout>
             <HomePage />
           </MainLayout>

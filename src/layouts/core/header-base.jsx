@@ -174,7 +174,7 @@ export function HeaderBase({
                     },
                   }}
                 >
-                  Sign Up Free
+                  Sign up Free
                 </Button>
               )}
             </Box>
