@@ -13,7 +13,7 @@ import {
   CarouselDotButtons,
   // CarouselArrowBasicButtons,
   CarouselArrowFloatButtons,
-  // CarouselArrowNumberButtons,
+ 
 } from 'src/components/carousel';
 
 
@@ -41,25 +41,30 @@ export function CarouselDotsNumber({ data }) {
           options={carousel.options}
           slotProps={{
             prevBtn: {
-              sx: { bgcolor: '#CBD0D5', color: '#fff' },
+              
               svgIcon: (
                 <path
-                  fill="#fff"
-                  d="M20 11.25a.75.75 0 0 1 0 1.5h-9.25V18a.75.75 0 0 1-1.28.53l-6-6a.75.75 0 0 1 0-1.06l6-6a.75.75 0 0 1 1.28.53v5.25z"
+                  fill="currentColor"
+                  fillRule="evenodd"
+                  d="M15.488 4.43a.75.75 0 0 1 .081 1.058L9.988 12l5.581 6.512a.75.75 0 1 1-1.138.976l-6-7a.75.75 0 0 1 0-.976l6-7a.75.75 0 0 1 1.057-.081"
+                  clipRule="evenodd"
                 />
               ),
             },
             nextBtn: {
-              sx: { bgcolor: '#CBD0D5', color: 'primary.contrastText' },
+              
               svgIcon: (
                 <path
                   fill="currentColor"
-                  d="M4 11.25a.75.75 0 0 0 0 1.5h9.25V18a.75.75 0 0 0 1.28.53l6-6a.75.75 0 0 0 0-1.06l-6-6a.75.75 0 0 0-1.28.53v5.25z"
+                  fillRule="evenodd"
+                  d="M8.512 4.43a.75.75 0 0 1 1.057.082l6 7a.75.75 0 0 1 0 .976l-6 7a.75.75 0 0 1-1.138-.976L14.012 12L8.431 5.488a.75.75 0 0 1 .08-1.057"
+                  clipRule="evenodd"
                 />
               ),
             },
           }}
         />
+        {/* <CarouselArrowBasicButtons {...carousel.arrows} options={carousel.options} /> */}
       </Box>
 
       <Box
@@ -95,14 +100,18 @@ function CarouselItem({ item, index }) {
         overflow: 'hidden',
         position: 'relative',
         objectFit: 'contain',
+        height:"500px",
+        display:"flex",
+        flexDirection:"column",
+        justifyContent:"center",
         
       }}
     >
-      {/* Image of the Carousel */}
-      <Image visibleByDefault alt={item.title} src={item.coverUrl} ratio="0" />
+        <Image visibleByDefault alt={item.title} src={item.coverUrl} ratio="0" />
+      
 
       {/* Title of the Item */}
-      <Typography variant="body1" sx={{ ...maxLine({ line: 2 }), mb: 2, mt: 2 }}>
+      <Typography variant="body1" sx={{ ...maxLine({ line: 2 }), mb: 2, mt: 2, fontWeight: '650' }}>
         {item.title}
       </Typography>
 
@@ -110,7 +119,7 @@ function CarouselItem({ item, index }) {
       <Box
         sx={{
           position: 'absolute',
-          top: '50%', // Center vertically
+          top: '45%', // Center vertically
           left: '50%', // Center horizontally
           transform: 'translate(-50%, -50%)', // Adjust to perfectly center the button
         }}

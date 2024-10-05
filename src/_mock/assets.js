@@ -329,12 +329,12 @@ export const _roles = [
 // ----------------------------------------------------------------------
 
 export const _postTitles = [
-  `Getting Started with Pabbly Connect`,
-  `Getting Started with Pabbly Subscription Billing`,
   `Getting Started with Pabbly Email Marketing`,
   `Getting Started with Pabbly Form Builder`,
-  `Getting Started with Pabbly Email Verification`,
+  `Getting Started with Pabbly Subscription Billing`,
+  `Getting Started with Pabbly Connect`,
   `Integrate Pabbly Form Builder to Pabbly Email Marketing`,
+  `Getting Started with Pabbly Email Verification`,
   `Sustainable Fashion: How the Industry is Going Green`,
   `Space Exploration: New Frontiers and the Quest for Extraterrestrial Life`,
   `The Evolution of E-Commerce: Trends Shaping the Online Retail Landscape`,

@@ -353,7 +353,7 @@ export function HomeHero({ sx, ...other }) {
     <Stack
       alignItems="center"
       justifyContent="center" // This centers the content vertically
-      sx={{ position: 'relative', height: '100%' }} // Ensures the stack takes full height for proper centering
+      sx={{ position: 'relative' }} // Ensures the stack takes full height for proper centering
     >
       <Box
         sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
@@ -364,7 +364,7 @@ export function HomeHero({ sx, ...other }) {
       <Box
         component="img"
         alt="Pabbly-Plus-Video-Cover-new1"
-        src={`${CONFIG.site.basePath}/assets/images/home/Pabbly-Plus-Video-Cover-new1-min.webp`}
+        src={`${CONFIG.site.basePath}/assets/images/home/Pabbly-Plus-Video-Cover-new1-min.png`}
         sx={{
           objectFit: 'contain',
           aspectRatio: '0',

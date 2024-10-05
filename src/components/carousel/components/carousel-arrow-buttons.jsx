@@ -141,11 +141,11 @@ export function CarouselArrowFloatButtons({
 }) {
   const baseStyles = {
     zIndex: 9,
-    top: '40%',
+    top: '45%',
     borderRadius: 3,
     position: 'absolute',
-    color: 'common.white',
-    bgcolor: 'text.primary',
+    color: '#637381',
+    bgcolor: '#F3F4F5',
     transform: 'translateY(-40%)',
     '&:hover': { opacity: 0.8 },
     [stylesMode.dark]: { color: 'grey.800' },
@@ -227,8 +227,8 @@ export function ArrowButton({ sx, svgIcon, svgSize, options, variant, ...other }
       <SvgIcon
         className={carouselClasses.arrowSvg}
         sx={{
-          width: svgSize ?? 20,
-          height: svgSize ?? 20,
+          width: svgSize ?? 30,
+          height: svgSize ?? 30,
           ...(options?.axis === 'y' && { transform: ' rotate(90deg)' }),
           ...(options?.direction === 'rtl' && { transform: ' scaleX(-1)' }),
         }}

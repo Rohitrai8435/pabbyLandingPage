@@ -11,8 +11,8 @@ import Container from '@mui/material/Container';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import SecurityIcon from '@mui/icons-material/Security';
-import { Card, Tooltip, CardContent } from '@mui/material';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
+import { Card, Tooltip, CardContent, useMediaQuery } from '@mui/material';
 
 import { CONFIG } from 'src/config-global';
 
@@ -203,6 +203,7 @@ export function HomePricing({ sx, ...other }) {
               />
             </Tabs>
           </Box>
+          {/* <PricingTabs/> */}
 
           {/* Pricing Plans */}
           <Box
@@ -210,7 +211,7 @@ export function HomePricing({ sx, ...other }) {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              gap: 3,
+              gap: { xs: 2, md: 4 },
               mt: 5,
             }}
           >
@@ -265,7 +266,10 @@ export function HomePricing({ sx, ...other }) {
                 license: 'PABBLY PLUS',
                 oldPrice: currentPricing.oldPrice,
                 price: currentPricing.price, // Dynamic price based on billing period
-                commonFeature: ['Access All Pabbly Apps', 'Unlimited Features'],
+                commonFeature: [
+                  'Access All Pabbly Apps', // Corrected bold tags
+                  'Unlimited Features', // Corrected bold tags
+                ],
                 features: [
                   {
                     image: 'product-1.svg',
@@ -323,9 +327,14 @@ const PlanCard = ({ plan, plus = false, free = false, sx, ...other }) => {
 
   return (
     <Stack
-      spacing={3}
+      spacing={4}
       sx={{
         p: {
+          xs: 1, // Padding for extra small devices
+          sm: 3, // Padding for small devices
+          md: 4, // Padding for medium and larger devices
+        },
+        py: {
           xs: 2, // Padding for extra small devices
           sm: 3, // Padding for small devices
           md: 4, // Padding for medium and larger devices
@@ -346,6 +355,9 @@ const PlanCard = ({ plan, plus = false, free = false, sx, ...other }) => {
           md: '350px',
         },
         textAlign: { xs: 'center', sm: 'center', md: 'center' },
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         position: 'relative',
         ...sx,
         '&:hover': {
@@ -368,7 +380,7 @@ const PlanCard = ({ plan, plus = false, free = false, sx, ...other }) => {
 
       {/* Pricing */}
       {plus && (
-        <Box>
+        <Box sx={{ alignSelf: 'center' }}>
           <Typography variant="body2" sx={{ textDecoration: 'line-through' }}>
             normally ₹{plan.oldPrice}/mo
           </Typography>
@@ -378,7 +390,7 @@ const PlanCard = ({ plan, plus = false, free = false, sx, ...other }) => {
         </Box>
       )}
       {free && (
-        <Box>
+        <Box sx={{ alignSelf: 'center' }}>
           <Typography variant="body2" sx={{ textDecoration: 'line-through' }}>
             normally ₹{plan.oldPrice}/mo
           </Typography>
@@ -390,34 +402,40 @@ const PlanCard = ({ plan, plus = false, free = false, sx, ...other }) => {
 
       {/* Common Features */}
       <Divider sx={{ borderWidth: '1px', mb: 1 }} />
-      <Box spacing={0.5} sx={{ typography: 'body2', mb: 2 ,ml:"3px" ,textAlign:"center"}}>
+      <Box sx={{ mb: 2, alignSelf: 'center' }}>
         {plan.commonFeature.map((feature, index) => (
-          
-            <Box display="flex" alignItems="center">
-              {free ? (
-                <Icon
-                  icon="ep:close-bold"
-                  width="15px"
-                  height="15px"
-                  style={{ color: '#FF5F1E', marginRight: 22 }}
-                />
-              ) : (
-                <Icon
-                  icon="fa-solid:check"
-                  width="15px"
-                  height="15px"
-                  style={{ color: '#20B276', marginRight:22}}
-                />
-              )}
-               <Typography variant="body2" key={index} sx={{ textAlign: 'start' }}>
+          <Box
+            display="flex"
+            sx={{ alignItems: { xs: 'start', md: 'center', sm: 'center', lg: 'center' } }}
+          >
+            {free ? (
+              <Icon
+                icon="mingcute:close-fill"
+                width={{ xs: '5px', md: '15px' }}
+                height={{ xs: '5px', md: '15px' }}
+                style={{ color: '#FF5F1E', marginRight: 22, fontWeight: '500' }}
+              />
+            ) : (
+              <Icon
+                icon="mingcute:check-fill"
+                width={{ xs: '5px', md: '15px' }}
+                height={{ xs: '5px', md: '15px' }}
+                style={{ color: '#20B276', marginRight: 22 }}
+              />
+            )}
+            <Typography
+              variant="body2"
+              key={index}
+              sx={{ textAlign: 'start', fontSize: { xs: '10px', md: '15px' } ,fontWeight:"700"}}
+            >
               {feature}
             </Typography>
-            </Box>
+          </Box>
         ))}
       </Box>
 
       {/* Features with Tooltip */}
-      <Stack spacing={2} sx={{ typography: 'body2' }}>
+      <Stack spacing={3} sx={{ typography: 'body2', alignSelf: 'center' }}>
         {plan.features.map((feature, index) => (
           <Tooltip
             title={
@@ -429,7 +447,7 @@ const PlanCard = ({ plan, plus = false, free = false, sx, ...other }) => {
             arrow
             placement="top"
           >
-            <Box sx={{ display: 'flex', alignItems: 'start', gap: 2 }}>
+            <Box sx={{ display: 'flex', alignItems: 'start', gap: { xs: '4px', md: 2 } }}>
               <Box
                 component="img"
                 src={`${CONFIG.site.basePath}/assets/icons/home/${feature.image}`}
@@ -444,14 +462,22 @@ const PlanCard = ({ plan, plus = false, free = false, sx, ...other }) => {
                     fontWeight: 'bold',
                     textAlign: 'left',
                     fontSize: {
-                      sm: '5px',
+                      xs: '10px',
+                      sm: '10px',
                       md: '1rem',
                     },
                   }}
                 >
                   {feature.title}
                 </Typography>
-                <Typography variant="caption" sx={{ color: 'text.secondary', textAlign: 'left' }}>
+                <Typography
+                  variant="caption"
+                  sx={{
+                    color: 'text.secondary',
+                    textAlign: 'left',
+                    fontSize: { xs: '9px', sm: '10px', md: '15px' },
+                  }}
+                >
                   {feature.sub_title}
                 </Typography>
               </Box>
@@ -592,14 +618,14 @@ function EnterpriseReady() {
                 width: { xs: '25px', sm: '50px', md: '50px' },
                 height: { xs: '25px', sm: '50px', md: '50px' },
                 objectFit: 'contain',
-                mr:1
+                mr: 1,
               }}
             />
             <Typography
               variant="h5"
               fontWeight="bold"
               color="inherit"
-              sx={{ fontSize: { xs: '20px', sm: '40px' },fontWeight:"1000" }}
+              sx={{ fontSize: { xs: '20px', sm: '40px' }, fontWeight: '1000' }}
             >
               Pabbly is <span style={{ color: '#0062cc' }}>Enterprise Ready!</span>
             </Typography>
@@ -697,3 +723,91 @@ function EnterpriseReady() {
     </Stack>
   );
 }
+
+
+
+const PricingTabs = () => {
+  const [value, setValue] = useState(0);
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <Container sx={{ display: 'flex' ,justifyContent:"center"}}>
+      <Box>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          TabIndicatorProps={{ style: { display: 'none' } }} // Hide the default underline
+          textColor="inherit"
+          aria-label="pricing plans"
+          orientation={isSmallScreen ? 'vertical' : 'horizontal'} // Change orientation based on screen size
+          sx={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: isSmallScreen ? 'column' : 'row',
+           
+          }}
+        >
+          <Tab
+            label="Monthly"
+            sx={{
+              border: '1px solid #EDEDED',
+              width: isSmallScreen ? '100%' : '200px',
+              borderRadius: '20px',
+              fontWeight: 'bold',
+              color: value === 0 ? 'yellow' : 'black',
+              backgroundColor: value === 0 ? 'blue' : 'transparent',
+              mb: isSmallScreen ? '-10px' : '0px', // Adds margin-bottom for vertical layout
+              mr: !isSmallScreen ? '-10px' : '10px', // Adds margin-right for horizontal layout
+            }}
+          />
+          <Tab
+            label="Yearly - SAVE 33%"
+            sx={{
+              border: '1px solid #EDEDED',
+              width: isSmallScreen ? '100%' : '200px',
+              borderRadius: '20px',
+              fontWeight: 'bold',
+              color: value === 1 ? 'yellow' : 'black',
+              backgroundColor: value === 1 ? 'blue' : 'transparent',
+              mb: isSmallScreen ? '-10px' : '0',
+              mr: !isSmallScreen ? '-20px' : '10px',
+            }}
+          />
+          <Tab
+            label="2 Yearly - SAVE 33%"
+            sx={{
+              border: '1px solid #EDEDED',
+              width: isSmallScreen ? '100%' : '200px',
+              borderRadius: '20px',
+              fontWeight: 'bold',
+              color: value === 2 ? 'yellow' : 'black',
+              backgroundColor: value === 2 ? 'blue' : 'transparent',
+              mb: isSmallScreen ? '-10px' : '0',
+              mr: !isSmallScreen ? '-20px' : '10px',
+            }}
+          />
+          <Tab
+            label="3 Yearly - SAVE 40%"
+            sx={{
+              border: '1px solid #EDEDED',
+              width: isSmallScreen ? '100%' : '200px',
+              borderRadius: '20px',
+              fontWeight: 'bold',
+              color: value === 3 ? 'yellow' : 'black',
+              backgroundColor: value === 3 ? 'blue' : 'transparent',
+            }}
+          />
+        </Tabs>
+      </Box>
+    </Container>
+  );
+};
+
+export default PricingTabs;
+
+
