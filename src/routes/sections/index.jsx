@@ -21,7 +21,7 @@ const HomePage = lazy(() => import('src/pages/home'));
 const PromoBanner = () => (
   <Box
     sx={{
-      backgroundColor: '#d1e6df',
+      background: 'radial-gradient(circle, #ffffff, #d1e6df, #b0c9bf)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -52,7 +52,7 @@ const PromoBanner = () => (
         marginBottom: { xs: '10px', sm: '0' }, // Space below on small screens
       }}
     >
-      <Box sx={{display:{xs:"none"}}}>
+      <Box sx={{ display: { xs: 'none' } }}>
         <AccessTimeIcon
           sx={{
             fontSize: { xs: '25px', md: '30px', sm: '25px' },
@@ -72,7 +72,7 @@ const PromoBanner = () => (
         </Typography>
       </Box>
       <Typography variant="body1" component="span">
-        👉 DON’T MISS OUT - Get Extra 5% Discount on Pabbly Plus (Yearly Plan)! Code:
+        👉<b>DON’T MISS OUT</b>- Get Extra 5% Discount on Pabbly Plus (Yearly Plan)! Code:
         <span style={{ fontWeight: '900', textDecoration: 'underline' }}> EXTRA5</span>
       </Typography>
     </Box>
@@ -85,14 +85,14 @@ const PromoBanner = () => (
         color: 'black',
         fontWeight: 'bold',
         '&:hover': {
-          backgroundColor: '#f5a623', // Slightly darker on hover
+          backgroundColor: '#f5a623',
         },
-        marginLeft: { xs: '0', sm: '20px' }, // No margin for small screens, add margin for larger screens
-        marginTop: { xs: '10px', sm: '0' }, // Add top margin for small screens
-        width: { xs: '100%', sm: 'auto' }, // Full width button on small screens
+        marginLeft: { xs: '0', sm: '20px' },
+        marginTop: { xs: '10px', sm: '0' },
+        width: { xs: '100%', sm: 'auto' },
       }}
     >
-      VIEW OFFER
+      <span style={{ color: 'blue' }}>👉🏿</span> VIEW OFFER
     </Button>
   </Box>
 );

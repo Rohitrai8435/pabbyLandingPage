@@ -367,7 +367,8 @@ export function HomeHero({ sx, ...other }) {
         src={`${CONFIG.site.basePath}/assets/images/home/Pabbly-Plus-Video-Cover-new1-min.png`}
         sx={{
           objectFit: 'contain',
-          aspectRatio: '0',
+          aspectRatio: '16/10',
+          height:{md:"500px"},
           borderRadius: '16px',
           border: '2px solid rgba(0, 0, 0, 0.1)',
           boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)',
@@ -407,7 +408,7 @@ export function HomeHero({ sx, ...other }) {
         <Container
           component={MotionContainer}
           sx={{
-            py: 10,
+            py: 5,
             gap: 5,
             zIndex: 9,
             display: 'flex',
@@ -430,7 +431,6 @@ export function HomeHero({ sx, ...other }) {
           </Stack>
           <MInview>{renderImg}</MInview>
           <MInview>{featureList}</MInview>
-
           <MInview>{renderRatings}</MInview>
           <MInview>{renderButtons}</MInview>
           <MInview>{renderRatings1}</MInview>

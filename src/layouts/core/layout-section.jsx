@@ -44,7 +44,7 @@ export function LayoutSection({
               className={layoutClasses.hasSidebar}
             >
               {headerSection}
-              {children}
+              {/* {children} */}
               {footerSection}
             </Box>
           </>

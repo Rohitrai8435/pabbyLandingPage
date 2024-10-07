@@ -47,7 +47,7 @@ export function HomeTestimonials({ sx, ...other }) {
       title="Customers Who Are"
       txtGradient="Trusting Us! "
       description="Non incentivized reviews from real users."
-      sx={{ mb: 10, textAlign: 'center' }}
+      sx={{ mb: 5, textAlign: 'center' }}
     />
   );
 

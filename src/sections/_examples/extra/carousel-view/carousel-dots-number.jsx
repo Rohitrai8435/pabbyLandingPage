@@ -24,7 +24,7 @@ export function CarouselDotsNumber({ data }) {
     loop: true,
     dragFree: true,
     slideSpacing: '30px',
-    slidesToShow: { xs: 1, sm: 3, md: 3 },
+    slidesToShow: { xs: 1, sm: 3, md: 3,lg:3 },
   });
 
   return (
@@ -68,12 +68,11 @@ export function CarouselDotsNumber({ data }) {
       </Box>
 
       <Box
-        gap={2}
+        gap={1}
         display="flex"
         alignItems="center"
         flexDirection="column"
         sx={{
-          mt: 2,
           borderRadius: 2,
         }}
       >
@@ -83,7 +82,7 @@ export function CarouselDotsNumber({ data }) {
           selectedIndex={carousel.dots.selectedIndex}
           onClickDot={carousel.dots.onClickDot}
           fallbackCount={5}
-          sx={{ color: '#CBD0D5' }}
+          sx={{ color: "inherit" }}
         />
       </Box>
     </>
@@ -100,7 +99,7 @@ function CarouselItem({ item, index }) {
         overflow: 'hidden',
         position: 'relative',
         objectFit: 'contain',
-        height:"500px",
+        height:"450px",
         display:"flex",
         flexDirection:"column",
         justifyContent:"center",
@@ -111,7 +110,7 @@ function CarouselItem({ item, index }) {
       
 
       {/* Title of the Item */}
-      <Typography variant="body1" sx={{ ...maxLine({ line: 2 }), mb: 2, mt: 2, fontWeight: '650' }}>
+      <Typography variant="body1" sx={{ ...maxLine({ line: 2 }), mt: 2, fontWeight: '650' }}>
         {item.title}
       </Typography>
 
@@ -119,9 +118,9 @@ function CarouselItem({ item, index }) {
       <Box
         sx={{
           position: 'absolute',
-          top: '45%', // Center vertically
+          top: '46%', // Center vertically
           left: '50%', // Center horizontally
-          transform: 'translate(-50%, -50%)', // Adjust to perfectly center the button
+          transform: 'translate(-46%, -46%)', // Adjust to perfectly center the button
         }}
       >
         <PulsatingButton /> {/* Include the PulsatingButton here */}

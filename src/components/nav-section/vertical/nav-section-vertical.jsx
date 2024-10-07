@@ -1,13 +1,11 @@
-import { useState, useCallback } from 'react';
-
 import Stack from '@mui/material/Stack';
-import Collapse from '@mui/material/Collapse';
+import { Box, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
-import { NavList } from './nav-list';
+import { NavUl } from '../styles';
 import { navSectionClasses } from '../classes';
 import { navSectionCssVars } from '../css-vars';
-import { NavUl, NavLi, Subheader } from '../styles';
+// import { Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -29,63 +27,84 @@ export function NavSectionVertical({
   return (
     <Stack component="nav" className={navSectionClasses.vertical.root} sx={{ ...cssVars, ...sx }}>
       <NavUl sx={{ flex: '1 1 auto', gap: 'var(--nav-item-gap)' }}>
-        {data.map((group) => (
-          <Group
-            key={group.subheader ?? group.items[0].title}
-            subheader={group.subheader}
-            items={group.items}
-            render={render}
-            slotProps={slotProps}
-            enabledRootRedirect={enabledRootRedirect}
-          />
-        ))}
+        <Box display="flex" marginLeft="45px">
+          <Typography
+            variant="body2"
+            sx={{
+              mb: 1,
+              fontWeight: '700',
+              transition: 'color 0.3s',
+              '&:hover': {
+                color: '#20B276', // Change to your desired hover color
+              },
+            }}
+          >
+            Pabbly Plus
+          </Typography>
+        </Box>
+        <Box display="flex" marginLeft="45px">
+          <Typography
+            variant="body2"
+            sx={{
+              mb: 1,
+              fontWeight: '700',
+              transition: 'color 0.3s',
+              '&:hover': {
+                color: '#20B276',
+              },
+            }}
+          >
+            Pabbly Connect
+          </Typography>
+        </Box>
+        <Box display="flex" marginLeft="45px">
+          <Typography
+            variant="body2"
+            sx={{
+              mb: 1,
+              fontWeight: '700',
+              transition: 'color 0.3s',
+              '&:hover': {
+                color: '#20B276',
+              },
+            }}
+          >
+            Pabbly Subscription Billing
+          </Typography>
+        </Box>
+        <Box display="flex" marginLeft="45px">
+          <Typography
+            variant="body2"
+            sx={{
+              mb: 1,
+              fontWeight: '700',
+              transition: 'color 0.3s',
+              '&:hover': {
+                color: '#20B276',
+              },
+            }}
+          >
+            Pabbly Email Verification
+          </Typography>
+        </Box>
+        <Box display="flex" marginLeft="45px">
+          <Typography
+            variant="body2"
+            sx={{
+              mb: 1,
+              fontWeight: '700',
+              transition: 'color 0.3s',
+              '&:hover': {
+                color: '#20B276',
+              },
+            }}
+          >
+            Pabbly Email Marketing
+          </Typography>
+        </Box>
       </NavUl>
     </Stack>
   );
 }
 
 // ----------------------------------------------------------------------
-
-function Group({ items, render, subheader, slotProps, enabledRootRedirect }) {
-  const [open, setOpen] = useState(true);
-
-  const handleToggle = useCallback(() => {
-    setOpen((prev) => !prev);
-  }, []);
-
-  const renderContent = (
-    <NavUl sx={{ gap: 'var(--nav-item-gap)' }}>
-      {items.map((list) => (
-        <NavList
-          key={list.title}
-          data={list}
-          render={render}
-          depth={1}
-          slotProps={slotProps}
-          enabledRootRedirect={enabledRootRedirect}
-        />
-      ))}
-    </NavUl>
-  );
-
-  return (
-    <NavLi>
-      {subheader ? (
-        <>
-          <Subheader
-            data-title={subheader}
-            open={open}
-            onClick={handleToggle}
-            sx={slotProps?.subheader}
-          >
-            {subheader}
-          </Subheader>
-
-          <Collapse in={open}>{renderContent}</Collapse>
-        </>
-      ) : (
-        renderContent
-      )}
-    </NavLi>
-  );
-}

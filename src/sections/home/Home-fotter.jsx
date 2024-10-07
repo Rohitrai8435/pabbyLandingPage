@@ -1,8 +1,8 @@
 import PhoneOutlineIcon from '@mui/icons-material/Phone';
-import StarBorderIcon from '@mui/icons-material/StarBorder'; // Import the outline star icon
+// import StarBorderIcon from '@mui/icons-material/StarBorder'; // Import the outline star icon
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import HeadsetMicOutlineIcon from '@mui/icons-material/HeadsetMic';
-import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined'; // Import the outline verified icon
+// import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined'; // Import the outline verified icon
 import { Box, Grid, Stack, Divider, Tooltip, Container, Typography } from '@mui/material';
 import {
   YouTube,
@@ -739,12 +739,38 @@ export function HomeFooter({ sx, ...other }) {
               {
                 label: 'SOC2 Type 2',
                 tooltip: 'Pabbly is SOC2 Type 2 certified.',
-                icon: <StarBorderIcon fontSize="small" />,
+                icon: (
+                  <Box
+                    component="img"
+                    alt="security seals"
+                    src={`${CONFIG.site.basePath}/assets/icons/home/iso.svg`}
+                    sx={{
+                      height: '19px',
+                      width: '19px',
+                      objectFit: 'contain',
+                      alignSelf: 'center',
+                      marginRight: '5px',
+                    }}
+                  />
+                ),
               },
               {
                 label: 'ISO 27001:2022',
                 tooltip: 'Pabbly is ISO 27001:2022 certified.',
-                icon: <VerifiedOutlinedIcon fontSize="small" />,
+                icon: (
+                  <Box
+                    component="img"
+                    alt="security seals"
+                    src={`${CONFIG.site.basePath}/assets/icons/home/type-1.svg`}
+                    sx={{
+                      height: '19px',
+                      width: '19px',
+                      objectFit: 'contain',
+                      alignSelf: 'center',
+                      marginRight: '5px',
+                    }}
+                  />
+                ),
               },
             ].map((item) => (
               <Box sx={{ mb: 1, display: 'flex', alignItems: 'center' }} key={item.label}>

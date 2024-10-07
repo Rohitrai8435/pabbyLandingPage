@@ -51,7 +51,7 @@ export function HomePricing({ sx, ...other }) {
   return (
     <Stack
       component="section"
-      sx={{ pb: { xs: 10, md: 10 }, pt: 10, position: 'relative', ...sx }}
+      sx={{ pb: { xs: 10, md: 10 }, pt: 5, position: 'relative', ...sx }}
       {...other}
     >
       <Container>
@@ -61,7 +61,8 @@ export function HomePricing({ sx, ...other }) {
           sx={{
             p: 2,
             textAlign: 'center',
-            backgroundColor: '#20B276',
+            background: 'radial-gradient(circle, #3BD691, #20B276, #20B276)',
+            // background: "linear-gradient(200deg, #3BD691, #20B276, #0F5D3F)",
             color: '#fff',
             borderRadius: 1,
             mb: 3,
@@ -117,6 +118,7 @@ export function HomePricing({ sx, ...other }) {
                     xs: '0.85rem', // Adjust font size for smaller screens
                     sm: '0.95rem',
                     md: '1rem',
+                    fontWeight: 'bold',
                   },
                   padding: {
                     xs: '8px',

@@ -23,14 +23,14 @@ export function HomeHighlightFeatures({ sx, ...other }) {
       title="Expert Video Tutorials to Guide You!"
       // txtGradient="14,099+ Businesses"
       description="Maximize the benefits of all Pabbly applications for your business with our easy-to-use resources."
-      sx={{ mb: 10, textAlign: 'center' }}
+      sx={{ mb: 0, textAlign: 'center' }}
     />
   );
   return (
     <Stack
       component="section"
       sx={{
-        pt: 5,
+        pt: 0,
         pb: { xs: 10, md: 10 },
         position: 'relative',
         ...sx,

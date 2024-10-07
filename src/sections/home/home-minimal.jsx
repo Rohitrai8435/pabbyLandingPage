@@ -48,7 +48,7 @@ export function HomeMinimal({ sx, ...other }) {
     <Stack
       component="section"
       sx={{
-        pt: 10,
+        pt: 5,
         pb: { xs: 10, md: 10 },
         position: 'relative',
         ...sx,

@@ -17,7 +17,6 @@ export default function Page() {
         <title> {metadata.title}</title>
         <meta name="description" content={metadata.description} />
       </Helmet>
-
       <HomeView />
     </>
   );

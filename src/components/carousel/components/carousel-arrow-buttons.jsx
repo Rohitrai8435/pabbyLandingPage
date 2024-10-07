@@ -227,8 +227,8 @@ export function ArrowButton({ sx, svgIcon, svgSize, options, variant, ...other }
       <SvgIcon
         className={carouselClasses.arrowSvg}
         sx={{
-          width: svgSize ?? 30,
-          height: svgSize ?? 30,
+          width: svgSize ?? 25,
+          height: svgSize ?? 25,
           ...(options?.axis === 'y' && { transform: ' rotate(90deg)' }),
           ...(options?.direction === 'rtl' && { transform: ' scaleX(-1)' }),
         }}

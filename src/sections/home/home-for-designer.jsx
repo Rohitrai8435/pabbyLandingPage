@@ -116,7 +116,7 @@ const renderDescription = (
     title="Pabbly Caters to"
     txtGradient="All Your Business Needs"
     description="Pabbly Plus is a comprehensive business management bundle that addresses all your sales and marketing needs, saving you the hassle of using multiple applications. With Pabbly Plus, you can take care of all your business needs in one place."
-    sx={{ mb: 10, textAlign: 'center' }}
+    sx={{ mb: 5, textAlign: 'center' }}
   />
 );
 
@@ -125,7 +125,7 @@ export function HomeForDesigner({ sx, ...other }) {
     <Stack
       component="section"
       sx={{
-        pt: 10,
+        pt: 5,
         pb: { xs: 10, md: 10 },
         position: 'relative',
         ...sx,
