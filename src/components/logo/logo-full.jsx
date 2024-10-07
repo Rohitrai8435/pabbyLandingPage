@@ -40,7 +40,7 @@ export const LogoFull = forwardRef(
       : isSmallScreen
         ? 20
         : isMediumScreen
-          ? 20
+          ? 40
           : isLargeScreen
             ? 100
             : 70; // Corresponding heights for various screens

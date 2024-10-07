@@ -81,8 +81,8 @@ export function HomeHero({ sx, ...other }) {
     <Container
       sx={{
         display: 'flex',
-        flexDirection: { xs: 'column', sm: 'column', md: 'row' },
-        gap: { xs: '10px', sm: '10px', md: '150px', lg: '150px' }, // Responsive gap
+        flexDirection: { xs: 'column', sm: 'row', md: 'row' },
+        gap: { xs: '10px', sm: '150px', md: '150px', lg: '150px' }, // Responsive gap
         justifyContent: 'space-between',
       }}
     >
@@ -219,7 +219,7 @@ export function HomeHero({ sx, ...other }) {
         display="flex"
         alignItems="center"
         sx={{
-          flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'row' },
+          flexDirection: { xs: 'column', sm: 'row', md: 'row', lg: 'row' },
           typography: 'subtitle2',
           border: '1px solid rgba(0, 0, 0, 0.1)', // Adding border
 
@@ -258,7 +258,7 @@ export function HomeHero({ sx, ...other }) {
         alignItems="center"
         justifyContent="center"
         sx={{
-          flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'row' },
+          flexDirection: { xs: 'column', sm: 'row', md: 'row', lg: 'row' },
           typography: 'subtitle2',
           border: '1px solid rgba(0, 0, 0, 0.1)', // Adding border
           borderRadius: '8px', // Rounded corners
@@ -296,7 +296,7 @@ export function HomeHero({ sx, ...other }) {
         flexDirection="row"
         alignItems="center"
         sx={{
-          flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'row' },
+          flexDirection: { xs: 'column', sm: 'row', md: 'row', lg: 'row' },
           typography: 'subtitle2',
           border: '1px solid rgba(0, 0, 0, 0.1)', // Adding border
           borderRadius: '8px', // Rounded corners

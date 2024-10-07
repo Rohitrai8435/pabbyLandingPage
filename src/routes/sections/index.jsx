@@ -21,21 +21,24 @@ const HomePage = lazy(() => import('src/pages/home'));
 const PromoBanner = () => (
   <Box
     sx={{
-      background: 'radial-gradient(circle, #ffffff, #d1e6df, #b0c9bf)',
+      background: 'radial-gradient(circle, #ffffff, #dfede8, #dfede8)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
+      gap:"10px",
       flexDirection: {
         xs: 'column', // Stack items on small screens
-        sm: 'row', // Horizontal layout on small screens and above
+        sm: 'column', // Horizontal layout on small screens and above
+        md: 'row', // Horizontal layout on small screens and above
       },
       textAlign: {
         xs: 'center', // Center text on small screens
-        sm: 'left', // Left-align text on medium screens and above
+        sm: 'center', // Left-align text on medium screens and above
       },
       padding: {
-        xs: '20px 10px', // Increase padding for small screens
-        sm: '10px 20px', // Regular padding for medium screens and above
+        xs: '10px 10px', // Increase padding for small screens
+        sm: '10px 10px', // Regular padding for medium screens and above
+        md: '15px 10px', // Regular padding for medium screens and above
       },
       borderRadius: '5px',
     }}
@@ -49,10 +52,10 @@ const PromoBanner = () => (
           xs: 'column', // Stack icon and text on small screens
           sm: 'row', // Horizontal layout on medium screens and above
         },
-        marginBottom: { xs: '10px', sm: '0' }, // Space below on small screens
+        marginBottom: { xs: '0px', sm: '0' }, // Space below on small screens
       }}
     >
-      <Box sx={{ display: { xs: 'none' } }}>
+      <Box sx={{ display: { xs: 'none',md:"flex" } }}>
         <AccessTimeIcon
           sx={{
             fontSize: { xs: '25px', md: '30px', sm: '25px' },

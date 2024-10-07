@@ -102,7 +102,7 @@ export function HomePricing({ sx, ...other }) {
               sx={{
                 '& .MuiTab-root': {
                   textTransform: 'none',
-                  fontWeight: 'bold',
+                  fontWeight: '650',
                   fontSize: {
                     xs: '0.85rem', // Adjust font size for smaller screens
                     sm: '0.95rem',
@@ -213,7 +213,7 @@ export function HomePricing({ sx, ...other }) {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              gap: { xs: 2, md: 4 },
+              gap: { xs: 2, md: 4,sm:3 },
               mt: 5,
             }}
           >
@@ -413,22 +413,26 @@ const PlanCard = ({ plan, plus = false, free = false, sx, ...other }) => {
             {free ? (
               <Icon
                 icon="mingcute:close-fill"
-                width={{ xs: '5px', md: '15px' }}
-                height={{ xs: '5px', md: '15px' }}
-                style={{ color: '#FF5F1E', marginRight: 22, fontWeight: '500' }}
+                width={{ xs: '5px', md: '15px', sm: '15px' }}
+                height={{ xs: '5px', md: '15px', sm: '15px' }}
+                style={{ color: '#FF5F1E', marginRight: 8, fontWeight: '500' }}
               />
             ) : (
               <Icon
                 icon="mingcute:check-fill"
-                width={{ xs: '5px', md: '15px' }}
-                height={{ xs: '5px', md: '15px' }}
-                style={{ color: '#20B276', marginRight: 22 }}
+                width={{ xs: '5px', md: '15px', sm: '15px' }}
+                height={{ xs: '5px', md: '15px', sm: '15px' }}
+                style={{ color: '#20B276', marginRight: 8 }}
               />
             )}
             <Typography
               variant="body2"
               key={index}
-              sx={{ textAlign: 'start', fontSize: { xs: '10px', md: '15px' } ,fontWeight:"700"}}
+              sx={{
+                textAlign: 'start',
+                fontSize: { xs: '10px', md: '15px', sm: '15px' },
+                fontWeight: '700',
+              }}
             >
               {feature}
             </Typography>
@@ -465,7 +469,7 @@ const PlanCard = ({ plan, plus = false, free = false, sx, ...other }) => {
                     textAlign: 'left',
                     fontSize: {
                       xs: '10px',
-                      sm: '10px',
+                      sm: '1rem',
                       md: '1rem',
                     },
                   }}
@@ -477,7 +481,7 @@ const PlanCard = ({ plan, plus = false, free = false, sx, ...other }) => {
                   sx={{
                     color: 'text.secondary',
                     textAlign: 'left',
-                    fontSize: { xs: '9px', sm: '10px', md: '15px' },
+                    fontSize: { xs: '9px', sm: '15px', md: '15px' },
                   }}
                 >
                   {feature.sub_title}

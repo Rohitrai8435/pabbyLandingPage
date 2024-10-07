@@ -31,6 +31,7 @@ export function HomeMinimal({ sx, ...other }) {
     />
   );
 
+  
   const renderImg = (
     <Box
       component="img"
@@ -39,10 +40,55 @@ export function HomeMinimal({ sx, ...other }) {
       sx={{
         objectFit: 'contain',
         aspectRatio: '0',
-        
+        display:{xs:"none",md:"flex" ,sm:"flex",lg:"flex"}
       }}
     />
   );
+  const renderImgINMobile = (
+    <Box
+      flexDirection="column"
+      sx={{
+        display: { xs: 'flex', md: 'none', sm: 'none' },
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: '15px',
+      }}
+    >
+      <Box
+        component="img"
+        alt="office-photo-new"
+        src={`${CONFIG.site.basePath}/assets/images/home/zapier-1.png`}
+        sx={{
+          objectFit: 'contain',
+          aspectRatio: '0',
+          borderRadius: '10px',
+          border: '1px solid #d7dce0',
+          bgcolor: '#fffF',
+        }}
+      />
+      <Box
+        component="img"
+        alt="office-photo-new"
+        src={`${CONFIG.site.basePath}/assets/images/home/vs-1.png`}
+        sx={{
+          objectFit: 'contain',
+          aspectRatio: '0',
+          width: '80px',
+          height: '80px',
+        }}
+      />
+      <Box
+        component="img"
+        alt="office-photo-new"
+        src={`${CONFIG.site.basePath}/assets/images/home/pabbly-1.png`}
+        sx={{
+          objectFit: 'contain',
+          aspectRatio: '0',
+        }}
+      />
+    </Box>
+  );
+  
 
   return (
     <Stack
@@ -58,6 +104,7 @@ export function HomeMinimal({ sx, ...other }) {
       <MotionViewport>
         <Container>
           {renderDescription}
+          {renderImgINMobile}
           {renderImg}
         </Container>
       </MotionViewport>

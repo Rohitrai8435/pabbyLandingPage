@@ -145,9 +145,11 @@ export function CarouselArrowFloatButtons({
     borderRadius: 3,
     position: 'absolute',
     color: '#637381',
-    bgcolor: '#F3F4F5',
+    // bgcolor: 'rgba(0, 0, 0, 0.2)',
+    // backgroundColour: 'rgba(255, 0, 0, 1)',
     transform: 'translateY(-40%)',
-    '&:hover': { opacity: 0.8 },
+    '&:hover': { opacity: 1, bgcolor: 'rgba(0, 0, 0, 0.1)' },
+
     [stylesMode.dark]: { color: 'grey.800' },
   };
 

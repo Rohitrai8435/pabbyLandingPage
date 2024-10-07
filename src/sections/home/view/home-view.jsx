@@ -15,7 +15,7 @@ import { HomeIntegrations } from '../home-integrations';
 import { HomeAdvertisement } from '../home-advertisement';
 import { HomeHugePackElements } from '../home-hugepack-elements';
 import { HomeHighlightFeatures } from '../home-highlight-features';
-// import Test from './test';
+// import Testing from '../testing';
 
 // ----------------------------------------------------------------------
 
@@ -30,6 +30,7 @@ export function HomeView() {
         sx={{ position: 'fixed' }}
       />
       <BackToTop />
+      {/* <Testing/> */}
       <HomeHero />
       <Stack sx={{ position: 'relative', bgcolor: 'background.default' }}>
         <HomeHugePackElements />

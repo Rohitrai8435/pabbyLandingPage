@@ -134,13 +134,13 @@ const PulsatingButton = () => {
     position: 'relative',
     width: {
       xs: '70px', // Small screen
-      sm: '70px', // Small devices
+      sm: '55px', // Small devices
       md: '70px', // Medium devices
       lg: '70px', // Large devices
     },
     height: {
       xs: '70px', // Small screen
-      sm: '70px', // Small devices
+      sm: '60px', // Small devices
       md: '70px', // Medium devices
       lg: '70px', // Large devices
     },
