@@ -142,6 +142,7 @@ export function CarouselArrowFloatButtons({
   const baseStyles = {
     zIndex: 9,
     top: '45%',
+    border: '1px solid currentColor',
     borderRadius: 3,
     position: 'absolute',
     color: '#637381',
@@ -229,8 +230,8 @@ export function ArrowButton({ sx, svgIcon, svgSize, options, variant, ...other }
       <SvgIcon
         className={carouselClasses.arrowSvg}
         sx={{
-          width: svgSize ?? 25,
-          height: svgSize ?? 25,
+          width: svgSize ?? 18,
+          height: svgSize ?? 18,
           ...(options?.axis === 'y' && { transform: ' rotate(90deg)' }),
           ...(options?.direction === 'rtl' && { transform: ' scaleX(-1)' }),
         }}

@@ -12,7 +12,7 @@ import { CONFIG } from 'src/config-global';
 import { varAlpha, stylesMode } from 'src/theme/styles';
 
 // import { Iconify } from 'src/components/iconify';
-import { varFade, MotionViewport } from 'src/components/animate';
+import { varFade,varScale, MotionViewport,  } from 'src/components/animate';
 
 import { CircleSvg } from './components/svg-elements';
 import { SectionTitle } from './components/section-title';
@@ -42,14 +42,13 @@ export function HomeZoneUI({ sx, ...other }) {
           filter: (theme) =>
             `drop-shadow(0 24px 48px ${varAlpha(theme.vars.palette.common.blackChannel, 0.16)})`,
         },
-
-        
       }}
     >
       <Box
-        component="img"
-        alt="office-photo-new"
+        component={m.img}
+        variants={{ ...varScale().in, initial: { scale: 0.8, opacity: 0 } }}
         src={`${CONFIG.site.basePath}/assets/images/home/office-photo-new.webp`}
+        alt="office-photo-new"
         sx={{
           objectFit: 'contain',
           aspectRatio: '0',

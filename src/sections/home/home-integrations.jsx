@@ -1,8 +1,12 @@
+import { Icon } from '@iconify/react';
+
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
+import { Grid, Stack, Button, Container } from '@mui/material';
+
+import { Iconify } from 'src/components/iconify';
 // import CardContent from '@mui/material/CardContent';
-import { Grid, Stack, Container } from '@mui/material';
 
 import { maxLine } from 'src/theme/styles';
 import { CONFIG } from 'src/config-global';
@@ -79,8 +83,7 @@ function BasicCard({ title, description, image }) {
       <Box
         sx={{
           display: 'flex',
-          padding:"20px"
-          
+          padding: '20px',
         }}
       >
         <Box
@@ -129,6 +132,68 @@ const renderDescription = (
     sx={{ mb: 10, textAlign: 'center' }}
   />
 );
+const renderButtons = (
+  <Box display="flex" flexWrap="wrap" justifyContent="center" gap={{ xs: 1.5, sm: 2 }}>
+    <Stack alignItems="center" spacing={1}>
+      <Button
+        href="#"
+        color="inherit"
+        size="large"
+        variant="contained"
+        startIcon={<Iconify width={24} icon="mdi:thumb-up-outline" />}
+      >
+        <span>{`START NOW IT'S FREE`} </span>
+      </Button>
+      <Container sx={{ display: 'flex', gap: '10px' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Icon
+            icon="fa-solid:check"
+            width="10px"
+            height="10px"
+            style={{ color: '#69B897', marginRight: '8px' }}
+          />
+          <Box>
+            {' '}
+            <Typography
+              variant="body1"
+              sx={{ fontWeight: '700', fontSize: { xs: '8px', sm: '10px', md: '10px' } }}
+            >
+              Trusted by 14,099+ Businesses
+            </Typography>
+          </Box>
+        </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Icon
+            icon="fa-solid:check"
+            width="10px"
+            height="10px"
+            style={{ color: '#69B897', marginRight: '8px' }}
+          />
+          <Typography
+            variant="body1"
+            sx={{ fontWeight: '700', fontSize: { xs: '8px', sm: '10px', md: '10px' } }}
+          >
+            30-Days Refund Guarantee
+          </Typography>
+        </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Icon
+            icon="fa-solid:check"
+            width="10px"
+            height="10px"
+            style={{ color: '#69B897', marginRight: '8px' }}
+          />
+          <Typography
+            variant="body1"
+            sx={{ fontWeight: '700', fontSize: { xs: '8px', sm: '10px', md: '10px' } }}
+          >
+            9,396+ Video Tutorials
+          </Typography>
+        </Box>
+      </Container>
+    </Stack>
+  </Box>
+);
 
 export function HomeIntegrations({ sx, ...other }) {
   return (
@@ -146,6 +211,7 @@ export function HomeIntegrations({ sx, ...other }) {
         <Container>
           {renderDescription}
           <Grid container>{renderCards()}</Grid>
+          <Box sx={{paddingTop:"30px"}}>{renderButtons}</Box>
         </Container>
       </MotionViewport>
     </Stack>

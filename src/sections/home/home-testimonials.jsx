@@ -1,6 +1,8 @@
 import { m } from 'framer-motion';
+import { Icon } from '@iconify/react';
 
 import Box from '@mui/material/Box';
+import { Button } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
 import Rating from '@mui/material/Rating';
@@ -14,6 +16,7 @@ import { fToNow } from 'src/utils/format-time';
 import { _mock } from 'src/_mock';
 import { maxLine, varAlpha, textGradient } from 'src/theme/styles';
 
+import { Iconify } from 'src/components/iconify';
 import { varFade, MotionViewport, AnimateCountUp } from 'src/components/animate';
 import {
   Carousel,
@@ -24,6 +27,7 @@ import {
 } from 'src/components/carousel';
 
 import { SectionTitle } from './components/section-title';
+
 // import { FloatLine, FloatTriangleDownIcon } from './components/svg-elements';
 
 // ----------------------------------------------------------------------
@@ -176,7 +180,68 @@ export function HomeTestimonials({ sx, ...other }) {
       {horizontalDivider('bottom')}
     </Stack>
   );
-
+  const renderButtons = (
+    <Box display="flex" flexWrap="wrap" justifyContent="center" gap={{ xs: 1.5, sm: 2 }}>
+      <Stack alignItems="center" spacing={1}>
+        <Button
+          href="#"
+          color="inherit"
+          size="large"
+          variant="contained"
+          startIcon={<Iconify width={24} icon="mdi:thumb-up-outline" />}
+        >
+          <span>{`START NOW IT'S FREE`} </span>
+        </Button>
+        <Container sx={{ display: 'flex', gap: '10px' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Icon
+              icon="fa-solid:check"
+              width="10px"
+              height="10px"
+              style={{ color: '#69B897', marginRight: '8px' }}
+            />
+            <Box>
+              {' '}
+              <Typography
+                variant="body1"
+                sx={{ fontWeight: '700', fontSize: { xs: '8px', sm: '10px', md: '10px' } }}
+              >
+                Trusted by 14,099+ Businesses
+              </Typography>
+            </Box>
+          </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Icon
+              icon="fa-solid:check"
+              width="10px"
+              height="10px"
+              style={{ color: '#69B897', marginRight: '8px' }}
+            />
+            <Typography
+              variant="body1"
+              sx={{ fontWeight: '700', fontSize: { xs: '8px', sm: '10px', md: '10px' } }}
+            >
+              30-Days Refund Guarantee
+            </Typography>
+          </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Icon
+              icon="fa-solid:check"
+              width="10px"
+              height="10px"
+              style={{ color: '#69B897', marginRight: '8px' }}
+            />
+            <Typography
+              variant="body1"
+              sx={{ fontWeight: '700', fontSize: { xs: '8px', sm: '10px', md: '10px' } }}
+            >
+              9,396+ Video Tutorials
+            </Typography>
+          </Box>
+        </Container>
+      </Stack>
+    </Box>
+  );
   return (
     <Stack component="section" sx={{ py: 10, position: 'relative', ...sx }} {...other}>
       <Container>
@@ -184,6 +249,7 @@ export function HomeTestimonials({ sx, ...other }) {
 
         {renderContent}
         {renderNumber}
+        <Box sx={{paddingTop:"50px"}}>{renderButtons}</Box>
       </Container>
     </Stack>
   );

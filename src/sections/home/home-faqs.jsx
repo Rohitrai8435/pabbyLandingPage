@@ -150,8 +150,8 @@ const FAQs = [
 // ----------------------------------------------------------------------
 
 export function HomeFAQs({ sx, ...other }) {
-  const [expanded, setExpanded] = useState(FAQs[0].question);
-
+  // const [expanded, setExpanded] = useState(FAQs[0].question);
+const [expanded, setExpanded] = useState(null);
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
@@ -181,7 +181,7 @@ export function HomeFAQs({ sx, ...other }) {
           component={m.div}
           variants={varFade({ distance: 24 }).inUp}
           expanded={expanded === item.question}
-          onChange={handleChange(item.question)}
+          onChange={() => setExpanded(expanded === item.question ? null : item.question)}
           sx={{
             borderRadius: 2,
             transition: (theme) =>
@@ -228,6 +228,7 @@ export function HomeFAQs({ sx, ...other }) {
       ))}
     </Stack>
   );
+
 
   const renderContact = (
     <Stack

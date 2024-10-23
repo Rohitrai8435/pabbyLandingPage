@@ -21,7 +21,7 @@ import { CONFIG } from 'src/config-global';
 import { textGradient } from 'src/theme/styles';
 
 import { Iconify } from 'src/components/iconify';
-import { varFade, MotionViewport, MotionContainer } from 'src/components/animate';
+import { varFade, varScale, MotionViewport, MotionContainer } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ export function HomeHero({ sx, ...other }) {
         [theme.breakpoints.up(lgKey)]: { fontSize: 54, lineHeight: '1.3em' },
       }}
     >
-      <Box sx={{ width: 1, opacity: 0.50 }}>Powerful Applications to Scale &</Box>
+      <Box sx={{ width: 1, opacity: 0.5 }}>Powerful Applications to Scale &</Box>
       Grow Your
       <Box
         component="span"
@@ -180,31 +180,31 @@ export function HomeHero({ sx, ...other }) {
     </Container>
   );
 
-  const renderRatings = (
-    <Box display="flex" gap="50px" flexWrap="wrap" alignItems="center" justifyContent="center">
-      <Box
-        gap={1.5}
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        sx={{ typography: 'subtitle2' }}
-      >
-        <AvatarGroup sx={{ [`& .${avatarClasses.root}`]: { width: 32, height: 32 } }}>
-          {[...Array(3)].map((_, index) => (
-            <Avatar
-              key={_mock.fullName(index + 1)}
-              alt={_mock.fullName(index + 1)}
-              src={_mock.image.avatar(index + 1)}
-            />
-          ))}
-        </AvatarGroup>
-        <Typography textAlign="center" variant="p">
-          160+ Happy customers
-        </Typography>
-      </Box>
-    </Box>
-  );
+  // const renderRatings = (
+  //   <Box display="flex" gap="50px" flexWrap="wrap" alignItems="center" justifyContent="center">
+  //     <Box
+  //       gap={1.5}
+  //       display="flex"
+  //       flexDirection="column"
+  //       alignItems="center"
+  //       justifyContent="center"
+  //       sx={{ typography: 'subtitle2' }}
+  //     >
+  //       <AvatarGroup sx={{ [`& .${avatarClasses.root}`]: { width: 32, height: 32 } }}>
+  //         {[...Array(3)].map((_, index) => (
+  //           <Avatar
+  //             key={_mock.fullName(index + 1)}
+  //             alt={_mock.fullName(index + 1)}
+  //             src={_mock.image.avatar(index + 1)}
+  //           />
+  //         ))}
+  //       </AvatarGroup>
+  //       <Typography textAlign="center" variant="p">
+  //         160+ Happy customers
+  //       </Typography>
+  //     </Box>
+  //   </Box>
+  // );
   const renderRatings1 = (
     <Box
       display="flex"
@@ -224,9 +224,9 @@ export function HomeHero({ sx, ...other }) {
           border: '1px solid rgba(0, 0, 0, 0.1)', // Adding border
 
           borderRadius: '8px', // Rounded corners
-          padding: { xs: '10px', sm: '10px', md: '10px', lg: '10px' },
+          padding: { xs: '8px', sm: '8px', md: '8px', lg: '8px' },
           width: { xs: '120px', sm: '250px' }, // Set width to ensure consistent size
-          height: { xs: '120px', sm: '80px', md: '80px', lg: '80px' },
+          height: { xs: '115px', sm: '70px', md: '70px', lg: '70px' }, // Set width to ensure consistent size
         }}
       >
         <AvatarGroup
@@ -264,7 +264,7 @@ export function HomeHero({ sx, ...other }) {
           borderRadius: '8px', // Rounded corners
           padding: { xs: '10px', sm: '10px', md: '10px', lg: '10px' },
           width: { xs: '120px', sm: '200px', md: '250px', lg: '250px' },
-          height: { xs: '120px', sm: '80px', md: '80px', lg: '80px' },
+          height: { xs: '115px', sm: '70px', md: '70px', lg: '70px' }, // Set width to ensure consistent size
         }}
       >
         <AvatarGroup
@@ -302,7 +302,7 @@ export function HomeHero({ sx, ...other }) {
           borderRadius: '8px', // Rounded corners
           padding: { xs: '10px', sm: '10px', md: '10px', lg: '10px' },
           width: { xs: '120px', sm: '200px', md: '250px', lg: '250px' },
-          height: { xs: '120px', sm: '80px', md: '80px', lg: '80px' },
+          height: { xs: '115px', sm: '70px', md: '70px', lg: '70px' }, // Set width to ensure consistent size
         }}
       >
         <AvatarGroup
@@ -330,10 +330,9 @@ export function HomeHero({ sx, ...other }) {
     </Box>
   );
 
-
   const renderButtons = (
     <Box display="flex" flexWrap="wrap" justifyContent="center" gap={{ xs: 1.5, sm: 2 }}>
-      <Stack alignItems="center" spacing={2.5}>
+      <Stack alignItems="center" spacing={1}>
         <Button
           component={RouterLink}
           href={paths.dashboard.root}
@@ -344,6 +343,53 @@ export function HomeHero({ sx, ...other }) {
         >
           <span>{`START NOW IT'S FREE`} </span>
         </Button>
+        <Container sx={{ display: 'flex', gap: '10px' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Icon
+              icon="fa-solid:check"
+              width="10px"
+              height="10px"
+              style={{ color: '#69B897', marginRight: '8px' }}
+            />
+            <Box>
+              {' '}
+              <Typography
+                variant="body1"
+                sx={{ fontWeight: '700', fontSize: { xs: '8px', sm: '10px', md: '10px' } }}
+              >
+                Trusted by 14,099+ Businesses
+              </Typography>
+            </Box>
+          </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Icon
+              icon="fa-solid:check"
+              width="10px"
+              height="10px"
+              style={{ color: '#69B897', marginRight: '8px' }}
+            />
+            <Typography
+              variant="body1"
+              sx={{ fontWeight: '700', fontSize: { xs: '8px', sm: '10px', md: '10px' } }}
+            >
+              30-Days Refund Guarantee
+            </Typography>
+          </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Icon
+              icon="fa-solid:check"
+              width="10px"
+              height="10px"
+              style={{ color: '#69B897', marginRight: '8px' }}
+            />
+            <Typography
+              variant="body1"
+              sx={{ fontWeight: '700', fontSize: { xs: '8px', sm: '10px', md: '10px' } }}
+            >
+              9,396+ Video Tutorials
+            </Typography>
+          </Box>
+        </Container>
       </Stack>
     </Box>
   );
@@ -362,13 +408,14 @@ export function HomeHero({ sx, ...other }) {
       </Box>
 
       <Box
-        component="img"
+        component={m.img}
+        variants={{ ...varScale().in, initial: { scale: 0.8, opacity: 0 } }}
         alt="Pabbly-Plus-Video-Cover-new1"
         src={`${CONFIG.site.basePath}/assets/images/home/Pabbly-Plus-Video-Cover-new1-min.png`}
         sx={{
           objectFit: 'contain',
           aspectRatio: '16/10',
-          height:{md:"500px"},
+          height: { md: '500px' },
           borderRadius: '16px',
           border: '2px solid rgba(0, 0, 0, 0.1)',
           boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)',
@@ -431,7 +478,7 @@ export function HomeHero({ sx, ...other }) {
           </Stack>
           <MInview>{renderImg}</MInview>
           <MInview>{featureList}</MInview>
-          <MInview>{renderRatings}</MInview>
+          {/* <MInview>{renderRatings}</MInview> */}
           <MInview>{renderButtons}</MInview>
           <MInview>{renderRatings1}</MInview>
         </Container>
